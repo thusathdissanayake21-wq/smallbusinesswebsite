@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VERIDIAN GROUP | Building What Comes Next</title>
+
+<style>
+:root {
+    --navy: #08111f;
+    --navy2: #0e1d32;
+    --gold: #c7a96b;
+    --cream: #f4f0e7;
+    --white: #ffffff;
+    --gray: #8792a3;
+    --line: rgba(255,255,255,0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ================= NAVIGATION ================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 24px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.4s ease;
+}
+
+nav.scrolled {
+    background: rgba(8,17,31,0.94);
+    backdrop-filter: blur(15px);
+    padding: 15px 5%;
+    border-bottom: 1px solid var(--line);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.logo-mark {
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--gold);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-mark::before {
+    content: "";
+    width: 18px;
+    height: 2px;
+    background: var(--gold);
+    transform: rotate(-45deg);
+}
+
+.logo-mark::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 18px;
+    background: var(--gold);
+    transform: rotate(45deg);
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.nav-links a {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+    color: var(--gold);
+}
+
+.investor-nav {
+    border: 1px solid var(--gold);
+    padding: 12px 18px;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 80% 30%, rgba(46,92,140,0.35), transparent 30%),
+        linear-gradient(135deg, #050b14, #0d1b30 65%, #142c48);
+}
+
+.grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.12;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px);
+    background-size: 70px 70px;
+}
+
+.hero-circle {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border: 1px solid rgba(199,169,107,0.18);
+    border-radius: 50%;
+    right: -180px;
+    top: 15%;
+    animation: rotate 30s linear infinite;
+}
+
+.hero-circle::before {
+    content: "";
+    position: absolute;
+    inset: 70px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 50%;
+}
+
+.hero-circle::after {
+    content: "";
+    position: absolute;
+    inset: 150px;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 50%;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 80px;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 9vw, 110px);
+    line-height: 0.92;
+    letter-spacing: -6px;
+    max-width: 850px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero-description {
+    margin-top: 35px;
+    max-width: 600px;
+    color: #c1c9d5;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.button {
+    padding: 15px 25px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+.button-gold {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #101010;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 60px;
+    margin-top: 75px;
+    padding-top: 25px;
+    border-top: 1px solid var(--line);
+    max-width: 650px;
+}
+
+.hero-stat strong {
+    display: block;
+    font-size: 28px;
+}
+
+.hero-stat small {
+    color: var(--gray);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ================= SECTIONS ================= */
+
+section {
+    padding: 120px 5%;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    margin-bottom: 65px;
+}
+
+.section-header h2 {
+    font-size: clamp(40px, 5vw, 70px);
+    line-height: 1;
+    letter-spacing: -3px;
+    max-width: 700px;
+}
+
+.section-header p {
+    color: #8792a3;
+    max-width: 400px;
+    align-self: flex-end;
+}
+
+/* ================= ABOUT ================= */
+
+.about {
+    background: var(--cream);
+    color: var(--navy);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-card {
+    background: var(--navy);
+    color: white;
+    padding: 60px;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-card h3 {
+    font-size: 42px;
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.about-card p {
+    color: #b5bfce;
+    line-height: 1.8;
+}
+
+.about-number {
+    position: absolute;
+    right: -20px;
+    bottom: -70px;
+    font-size: 200px;
+    color: rgba(255,255,255,0.03);
+    font-weight: bold;
+}
+
+.about-points {
+    display: grid;
+    gap: 30px;
+}
+
+.about-point {
+    border-top: 1px solid rgba(8,17,31,0.15);
+    padding-top: 18px;
+}
+
+.about-point h4 {
+    margin-bottom: 8px;
+}
+
+.about-point p {
+    color: #657080;
+    font-size: 14px;
+}
+
+/* ================= SUBSIDIARIES ================= */
+
+.ventures {
+    background: #ffffff;
+    color: var(--navy);
+}
+
+.venture-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.venture {
+    min-height: 520px;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+.venture-one {
+    background:
+        radial-gradient(circle at 80% 20%, rgba(74,133,191,0.5), transparent 30%),
+        linear-gradient(145deg, #0d213a, #173f67);
+}
+
+.venture-two {
+    background:
+        radial-gradient(circle at 75% 20%, rgba(199,169,107,0.3), transparent 30%),
+        linear-gradient(145deg, #181713, #443a29);
+}
+
+.venture-label {
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.venture h3 {
+    font-size: 48px;
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.venture p {
+    margin: 20px 0;
+    max-width: 450px;
+    color: #d0d7e1;
+}
+
+.venture-link {
+    color: var(--gold);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* ================= PHILOSOPHY ================= */
+
+.philosophy {
+    text-align: center;
+    background: var(--navy2);
+}
+
+.philosophy h2 {
+    font-size: clamp(45px, 7vw, 90px);
+    line-height: 1;
+    letter-spacing: -5px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.philosophy p {
+    color: #9da8b8;
+    max-width: 650px;
+    margin: 30px auto 0;
+    line-height: 1.8;
+}
+
+.philosophy-grid {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--line);
+}
+
+.philosophy-item {
+    padding: 30px 15px;
+    border-right: 1px solid var(--line);
+}
+
+.philosophy-item:last-child {
+    border-right: none;
+}
+
+.philosophy-item strong {
+    display: block;
+    font-size: 35px;
+    color: var(--gold);
+}
+
+.philosophy-item span {
+    color: #8994a5;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* ================= INVESTORS ================= */
+
+.investors {
+    background: #f1eee5;
+    color: var(--navy);
+}
+
+.investor-box {
+    background: white;
+    padding: 70px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 70px;
+}
+
+.investor-box h2 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -3px;
+}
+
+.investor-box p {
+    margin: 25px 0;
+    color: #667180;
+    max-width: 600px;
+}
+
+.investor-list {
+    border-left: 1px solid #ddd;
+    padding-left: 40px;
+}
+
+.investor-list h4 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.investor-list div {
+    padding: 15px 0;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact {
+    background: white;
+    color: var(--navy);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+}
+
+.contact h2 {
+    font-size: 65px;
+    line-height: 0.95;
+    letter-spacing: -4px;
+}
+
+.contact p {
+    color: #697585;
+    margin-top: 25px;
+    max-width: 500px;
+}
+
+form {
+    display: grid;
+    gap: 15px;
+}
+
+input,
+textarea {
+    border: 1px solid #d6dbe1;
+    padding: 17px;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    background: #fafafa;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--gold);
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.submit {
+    padding: 17px;
+    background: var(--navy);
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #050a12;
+    padding: 60px 5% 25px;
+}
+
+.footer-top {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+    color: #8792a3;
+    font-size: 12px;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    color: #657080;
+    font-size: 11px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ================= ANIMATIONS ================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 800px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        min-height: 900px;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .hero-stats {
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    .section-header {
+        display: block;
+    }
+
+    .section-header p {
+        margin-top: 25px;
+    }
+
+    .about-grid,
+    .venture-grid,
+    .contact-grid,
+    .investor-box {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+        gap: 50px;
+    }
+
+    .venture {
+        min-height: 430px;
+    }
+
+    .philosophy-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .philosophy-item:nth-child(2) {
+        border-right: none;
+    }
+
+    .philosophy-item {
+        border-bottom: 1px solid var(--line);
+    }
+
+    .investor-box {
+        padding: 40px;
+    }
+
+    .investor-box h2 {
+        font-size: 45px;
+    }
+
+    .investor-list {
+        border-left: none;
+        border-top: 1px solid #ddd;
+        padding: 30px 0 0;
+    }
+
+    .contact h2 {
+        font-size: 50px;
+    }
+
+    .footer-top,
+    .footer-bottom {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav id="navbar">
+
+    <a href="#home" class="logo">
+        <span class="logo-mark"></span>
+        VERIDIAN GROUP
+    </a>
+
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#ventures">Businesses</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#investors">Investors</a>
+        <a href="#contact" class="investor-nav">Contact</a>
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<header class="hero" id="home">
+
+    <div class="grid"></div>
+    <div class="hero-circle"></div>
+
+    <div class="hero-content reveal">
+
+        <div class="eyebrow">
+            Independent • Ambitious • Long-Term
+        </div>
+
+        <h1>
+            Building what<br>
+            <span>comes next.</span>
+        </h1>
+
+        <p class="hero-description">
+            Veridian Group is a diversified business platform
+            focused on identifying opportunities, building exceptional
+            companies and creating enduring value.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#ventures" class="button button-gold">
+                Explore Our Businesses
+            </a>
+
+            <a href="#investors" class="button">
+                Become an Investor
+            </a>
+
+        </div>
+
+        <div class="hero-stats">
+
+            <div class="hero-stat">
+                <strong>01</strong>
+                <small>Parent Group</small>
+            </div>
+
+            <div class="hero-stat">
+                <strong>02</strong>
+                <small>Operating Companies</small>
+            </div>
+
+            <div class="hero-stat">
+                <strong>∞</strong>
+                <small>Long-Term Vision</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <div class="section-container">
+
+        <div class="section-header reveal">
+
+            <h2>
+                A group designed
+                to think beyond
+                the obvious.
+            </h2>
+
+            <p>
+                We combine entrepreneurial execution with
+                disciplined capital allocation to build businesses
+                capable of creating value over the long term.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-card reveal">
+
+                <div class="eyebrow">
+                    Our Approach
+                </div>
+
+                <h3>
+                    Build.<br>
+                    Compound.<br>
+                    Endure.
+                </h3>
+
+                <p>
+                    We look for meaningful problems, emerging
+                    opportunities and markets where disciplined
+                    execution can create exceptional businesses.
+                </p>
+
+                <div class="about-number">
+                    01
+                </div>
+
+            </div>
+
+
+            <div class="about-points reveal">
+
+                <div class="about-point">
+
+                    <h4>01 — Opportunity</h4>
+
+                    <p>
+                        We identify markets where changing
+                        technology and behaviour create new
+                        possibilities.
+                    </p>
+
+                </div>
+
+
+                <div class="about-point">
+
+                    <h4>02 — Execution</h4>
+
+                    <p>
+                        Ideas matter only when they become
+                        products, systems and businesses that work.
+                    </p>
+
+                </div>
+
+
+                <div class="about-point">
+
+                    <h4>03 — Discipline</h4>
+
+                    <p>
+                        We believe thoughtful decisions and
+                        responsible capital allocation create
+                        stronger foundations.
+                    </p>
+
+                </div>
+
+
+                <div class="about-point">
+
+                    <h4>04 — Compounding</h4>
+
+                    <p>
+                        Our horizon is measured in years rather
+                        than quarters.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SUBSIDIARIES ================= -->
+
+<section class="ventures" id="ventures">
+
+    <div class="section-container">
+
+        <div class="section-header reveal">
+
+            <h2>
+                Two businesses.<br>
+                One larger vision.
+            </h2>
+
+            <p>
+                Our subsidiaries operate independently while
+                benefiting from the capabilities, capital and
+                strategic direction of the wider group.
+            </p>
+
+        </div>
+
+
+        <div class="venture-grid">
+
+            <!-- SUBSIDIARY ONE -->
+
+            <a href="#subsidiary-one" class="venture venture-one reveal">
+
+                <div class="venture-label">
+                    Subsidiary 01
+                </div>
+
+                <div>
+
+                    <h3>
+                        Northstar<br>
+                        Industries
+                    </h3>
+
+                    <p>
+                        A growth-focused operating company
+                        designed to turn emerging opportunities
+                        into scalable commercial platforms.
+                    </p>
+
+                    <span class="venture-link">
+                        Explore Northstar →
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- SUBSIDIARY TWO -->
+
+            <a href="#subsidiary-two" class="venture venture-two reveal">
+
+                <div class="venture-label">
+                    Subsidiary 02
+                </div>
+
+                <div>
+
+                    <h3>
+                        Meridian<br>
+                        Capital
+                    </h3>
+
+                    <p>
+                        An investment and strategic ventures arm
+                        focused on backing ideas, operators and
+                        markets with long-term potential.
+                    </p>
+
+                    <span class="venture-link">
+                        Explore Meridian →
+                    </span>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PHILOSOPHY ================= -->
+
+<section class="philosophy" id="philosophy">
+
+    <div class="section-container reveal">
+
+        <div class="eyebrow">
+            The Veridian Philosophy
+        </div>
+
+        <h2>
+            Think in decades.<br>
+            Execute today.
+        </h2>
+
+        <p>
+            Durable companies are built by balancing ambition
+            with patience, creativity with discipline, and
+            speed with good judgment.
+        </p>
+
+
+        <div class="philosophy-grid">
+
+            <div class="philosophy-item">
+                <strong>01</strong>
+                <span>Long-Term Thinking</span>
+            </div>
+
+            <div class="philosophy-item">
+                <strong>02</strong>
+                <span>Relentless Execution</span>
+            </div>
+
+            <div class="philosophy-item">
+                <strong>03</strong>
+                <span>Responsible Capital</span>
+            </div>
+
+            <div class="philosophy-item">
+                <strong>04</strong>
+                <span>Human Ambition</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= INVESTORS ================= -->
+
+<section class="investors" id="investors">
+
+    <div class="section-container">
+
+        <div class="investor-box reveal">
+
+            <div>
+
+                <div class="eyebrow">
+                    For Investors
+                </div>
+
+                <h2>
+                    Partner with
+                    the next chapter.
+                </h2>
+
+                <p>
+                    We welcome conversations with investors,
+                    strategic partners and institutions who share
+                    our long-term perspective.
+                </p>
+
+                <a href="#contact"
+                   class="button"
+                   style="background:#08111f;color:white;display:inline-block;">
+                    Start a Conversation
+                </a>
+
+            </div>
+
+
+            <div class="investor-list">
+
+                <h4>
+                    What We Value
+                </h4>
+
+                <div>
+                    Long-term alignment
+                </div>
+
+                <div>
+                    Transparent communication
+                </div>
+
+                <div>
+                    Disciplined capital allocation
+                </div>
+
+                <div>
+                    Founder-led execution
+                </div>
+
+                <div>
+                    Responsible growth
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+    <div class="section-container">
+
+        <div class="contact-grid">
+
+            <div class="reveal">
+
+                <div class="eyebrow">
+                    Contact
+                </div>
+
+                <h2>
+                    Let's build
+                    something
+                    meaningful.
+                </h2>
+
+                <p>
+                    Whether you're an investor, strategic partner,
+                    potential employee or simply have an idea worth
+                    discussing, we'd like to hear from you.
+                </p>
+
+            </div>
+
+
+            <form class="reveal" onsubmit="submitForm(event)">
+
+                <input
+                    type="text"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    placeholder="Email Address"
+                    required
+                >
+
+                <input
+                    type="text"
+                    placeholder="Company / Organisation"
+                >
+
+                <textarea
+                    placeholder="Tell us what you'd like to discuss..."
+                    required
+                ></textarea>
+
+                <button
+                    class="submit"
+                    type="submit">
+                    Send Enquiry
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-top">
+
+        <div class="logo">
+
+            <span class="logo-mark"></span>
+
+            VERIDIAN GROUP
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#about">About</a>
+
+            <a href="#ventures">Businesses</a>
+
+            <a href="#investors">Investors</a>
+
+            <a href="#contact">Contact</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Veridian Group. All Rights Reserved.
+        </span>
+
+        <span>
+            Private • Independent • Long-Term
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* ================= NAVBAR ================= */
+
+window.addEventListener("scroll", function() {
+
+    const navbar = document.getElementById("navbar");
+
+    if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+
+});
+
+
+/* ================= SCROLL ANIMATIONS ================= */
+
+const observer = new IntersectionObserver(
+
+    function(entries) {
+
+        entries.forEach(function(entry) {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+            }
+
+        });
+
+    },
+
+    {
+        threshold: 0.15
+    }
+
+);
+
+
+document.querySelectorAll(".reveal").forEach(function(element) {
+
+    observer.observe(element);
+
+});
+
+
+/* ================= CONTACT FORM ================= */
+
+function submitForm(event) {
+
+    event.preventDefault();
+
+    const button =
+        event.target.querySelector(".submit");
+
+    button.innerText = "Enquiry Received ✓";
+
+    button.style.background = "#9b8050";
+
+    event.target.reset();
+
+    setTimeout(function() {
+
+        button.innerText = "Send Enquiry";
+
+        button.style.background = "";
+
+    }, 3000);
+
+}
+
+</script>
+
+</body>
+</html>
